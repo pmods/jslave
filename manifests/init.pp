@@ -1,4 +1,5 @@
 include devusr
+include javadev
 
 class jslave (
     $jmaster = "http://your.server/jenkins"
@@ -27,6 +28,7 @@ class jslave (
         user    => $username,
         cwd     => "/home/$username",
         path    => $defpath,
-        require => Exec['fetch-swarmjar']
+        require => Exec['fetch-swarmjar'],
+
     }
 }
